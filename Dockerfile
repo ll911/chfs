@@ -15,14 +15,13 @@ RUN \
 
 RUN git clone https://github.com/ll911/chfs.git /tmp/repo1 && cp -r /tmp/repo1/* /usr/src/app && rm -Rf /tmp/repo1
 RUN npm install
-RUN bower install --alow-root
 RUN grunt
 
-RUN useradd -ms /bin/bash jekyll \
-  && chown -R jekyll:0 /usr/src/app \
+RUN useradd -ms /bin/bash chfs \
+  && chown -R chfs:0 /usr/src/app \
   && chmod -R 770 /usr/src/app
 
-USER jekyll
+USER chfs
 WORKDIR /usr/src/app
 EXPOSE 8080
 CMD node app.js -p 8080
