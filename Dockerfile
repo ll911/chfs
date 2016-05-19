@@ -22,5 +22,5 @@ RUN useradd -ms /bin/bash chfs \
 
 USER chfs
 WORKDIR /usr/src/app
-EXPOSE 3000
+EXPOSE 8080
 CMD node bin/www
