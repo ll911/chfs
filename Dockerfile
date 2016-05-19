@@ -23,4 +23,4 @@ RUN useradd -ms /bin/bash chfs \
 USER chfs
 WORKDIR /usr/src/app
 EXPOSE 3000
-CMD grunt
+CMD node bin/www
